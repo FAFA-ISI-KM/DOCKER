@@ -1,11 +1,14 @@
-# Projet Examen DevOps — Serveur HTTP Minimaliste avec Docker
+# Basic Docker HTTP Server
 
-## 📚 Description
-Ce projet met en place un serveur HTTP simple en Python, sans framework, exécuté dans un conteneur Docker.
+## Présentation
+
+Ce projet met en place un serveur HTTP minimaliste écrit en Python, utilisant uniquement les bibliothèques standards.  
+L’objectif est de comprendre les bases de la containerisation avec Docker et l’automatisation du déploiement via GitHub Actions.
 
 ---
 
-## 🚀 Structure du projet
+## Structure du projet
+
 ```
 basic-docker-project/
 ├── app/
@@ -17,59 +20,55 @@ basic-docker-project/
 
 ---
 
-## ✅ Exécution sans Docker Compose
+## Utilisation locale
 
-### 1. Construire l'image Docker :
+### 1. Lancer le serveur localement (sans Docker)
+
+```bash
+cd app
+python server.py
+```
+
+Ouvrir un navigateur et accéder à `http://localhost:8000`.
+
+---
+
+## Utilisation avec Docker
+
+### 1. Construction de l'image
+
 ```bash
 docker build -t basic-http-server .
 ```
 
-### 2. Exécuter le conteneur :
+### 2. Exécution du conteneur
+
 ```bash
 docker run -p 8000:8000 basic-http-server
 ```
 
+Ouvrir un navigateur et accéder à `http://localhost:8000`.
+
 ---
 
-## ✅ Exécution avec Docker Compose
+## Docker Compose
 
-### Lancer les services :
+Pour lancer facilement avec Docker Compose :
+
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 
 ---
 
-## 🌐 Accéder à l’application
-Ouvrez votre navigateur et rendez-vous sur :  
-```
-http://localhost:8000
-```
+## Déploiement automatique avec GitHub Actions
+
+À chaque `push` sur la branche `main`, un pipeline GitHub Actions se déclenche automatiquement pour :
+- Construire l’image Docker
+- Pousser l’image sur Docker Hub (`fatou2004/basic-http-server`)
 
 ---
 
-## 📥 Récupérer l'image depuis Docker Hub
+## Auteur
 
-### 1. Télécharger l’image Docker :
-```bash
-docker pull fatou2004/basic-http-server:latest
-```
-
-### 2. Lancer le conteneur depuis Docker Hub :
-```bash
-docker run -p 8000:8000 fatou2004/basic-http-server:latest
-```
-
----
-
-## ✅ Dépôt Docker Hub
-👉 Mon image est disponible ici :  
-https://hub.docker.com/r/fatou2004/basic-http-server
-
----
-
-## ✅ Auteur
-- Makhmadane LO  
-- Projet Examen DevOps — L3GL — Année 2024/2025
-
-
+Fatou Thioune Ba — Projet DevOps L3GL 2024/2025
