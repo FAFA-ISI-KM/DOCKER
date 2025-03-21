@@ -8,10 +8,10 @@ Ce projet permet de créer un serveur HTTP simple en Python et de le déployer d
 
 basic-docker-project/
 ├── app/
-│   └── server.py                                                      # Le serveur HTTP
-├── Dockerfile                                                         # Pour construire l’image Docker
-├── docker-compose.yml                                                 # Orchestration via Docker Compose
-└── README.md                                                          # Documentation
+│   └── server.py                                                      
+├── Dockerfile                                                         
+├── docker-compose.yml                                                 
+└── README.md                                                          
 
 # Lancer le projet localement (sans Docker)
 
