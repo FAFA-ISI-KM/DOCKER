@@ -1,74 +1,63 @@
-# Basic Docker HTTP Server
+📦 Projet : Serveur HTTP Minimaliste avec Docker
 
-## Présentation
+# Présentation
 
-Ce projet met en place un serveur HTTP minimaliste écrit en Python, utilisant uniquement les bibliothèques standards.  
-L’objectif est de comprendre les bases de la containerisation avec Docker et l’automatisation du déploiement via GitHub Actions.
+Ce projet permet de créer un serveur HTTP simple en Python et de le déployer dans un conteneur Docker.
 
----
+# Structure du projet
 
-## Structure du projet
-
-```
 basic-docker-project/
 ├── app/
-│   └── server.py
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
-```
+│   └── server.py     # Le serveur HTTP
+├── Dockerfile        # Pour construire l’image Docker
+├── docker-compose.yml # Orchestration via Docker Compose
+└── README.md         # Documentation
 
----
+# Lancer le projet localement (sans Docker)
 
-## Utilisation locale
-
-### 1. Lancer le serveur localement (sans Docker)
-
-```bash
 cd app
 python server.py
-```
 
-Ouvrir un navigateur et accéder à `http://localhost:8000`.
+Ouvrez votre navigateur à l’adresse :
+http://localhost:8000
 
----
+# Construire et exécuter avec Docker
 
-## Utilisation avec Docker
-
-### 1. Construction de l'image
-
-```bash
+1. Construire l’image Docker :
 docker build -t basic-http-server .
-```
 
-### 2. Exécution du conteneur
-
-```bash
+2. Exécuter l’image Docker :
 docker run -p 8000:8000 basic-http-server
-```
 
-Ouvrir un navigateur et accéder à `http://localhost:8000`.
+Accédez ensuite à :
+http://localhost:8000
 
----
+# Exécuter avec Docker Compose
 
-## Docker Compose
+docker-compose up --build
 
-Pour lancer facilement avec Docker Compose :
+Puis ouvrez :
+http://localhost:8000
 
-```bash
-docker-compose up
-```
+# Automatisation CI/CD
 
----
+Un pipeline GitHub Actions est configuré.
 
-## Déploiement automatique avec GitHub Actions
+À chaque push, l’image Docker est automatiquement reconstruite et envoyée vers DockerHub.
 
-À chaque `push` sur la branche `main`, un pipeline GitHub Actions se déclenche automatiquement pour :
-- Construire l’image Docker
-- Pousser l’image sur Docker Hub (`fatou2004/basic-http-server`)
+# Tester depuis DockerHub
 
----
+docker pull fatou2004/basic-http-server:latest
+docker run -p 8000:8000 fatou2004/basic-http-server:latest
 
-## Auteur
+Puis ouvrez :
+http://localhost:8000
 
-Fatou Thioune Ba — Projet DevOps L3GL 
+# Lien DockerHub
+
+fatou2004/basic-http-server sur DockerHub : https://hub.docker.com/r/fatou2004/basic-http-server
+
+ Auteur:
+
+Fatou Thioune Ba
+
