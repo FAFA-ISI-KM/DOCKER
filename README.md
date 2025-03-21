@@ -71,4 +71,4 @@ docker-compose up
 
 ## Auteur
 
-Fatou Thioune Ba — Projet DevOps L3GL 2024/2025
+Fatou Thioune Ba — Projet DevOps L3GL 
